@@ -1,5 +1,10 @@
 # .gitignore
 .venv/
+venv/
 __pycache__/
 *.pyc
+*.log
+logs/
+airflow.db
+airflow_home/
 .env
