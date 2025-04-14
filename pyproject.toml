@@ -1,0 +1,12 @@
+[project]
+name = "airflow-demo"
+version = "0.1.0"
+dependencies = [
+    "apache-airflow>=2.10.5",
+    "pandas>=2.2.3",
+    "requests>=2.32.3",
+    "setuptools>=78.1.0",
+    "wheel>=0.45.1",
+]
+
+[tool.uv]
