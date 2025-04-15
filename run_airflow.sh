@@ -1,9 +1,14 @@
 #!/bin/bash
 
-export AIRFLOW_HOME=$(pwd)/airflow_home
-export AIRFLOW__CORE__DAGS_FOLDER=$(pwd)/dags
-export AIRFLOW__CORE__PLUGINS_FOLDER=$(pwd)/plugins
+source .env
+source .venv/bin/activate
 
-source venv/bin/activate
+CMD=$1
 
-airflow webserver --port 8080
+if [ "$CMD" = "webserver" ]; then
+    airflow webserver
+elif [ "$CMD" = "scheduler" ]; then
+    airflow scheduler
+else
+    echo "Usage: ./run_airflow.sh [webserver|scheduler]"
+fi
